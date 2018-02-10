@@ -5,3 +5,4 @@ This repository is for our HSE course work, which is mainly about smart-contract
 
 ## Documentation
 1. [Problem overview](docs/overview.md)
+2. [Project architecture](architecture.md)
