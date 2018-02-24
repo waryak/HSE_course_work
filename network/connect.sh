@@ -1,2 +1,2 @@
-geth --datadir ./chain-data init genesis.json
-geth --datadir ./chain-data --port 30259 --networkid 5128794 --bootnodes enode://f021cbd384eec489b081d451189238b8d5cd0851459c0e51db773de455eed13c6e259d0f2c7b86c3a665e17eecdbedcba07544ee75c1237dcccb8938fcc866be@5.23.52.206:30259
+geth --datadir ./chain-data init CustomGenesis.json
+geth --datadir ./chain-data --port 30259 --networkid 5128794 --bootnodes enode://2fd46b0fce2cde2d0d2b77d6e5a0912e6caba6b461ce8089f34d1a5adbe83b10a3ff547cdf2363970d5c56788cc1c58c17234788adef127446a59e35f5c70371@5.23.52.206:30259
