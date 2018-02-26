@@ -1,0 +1,3 @@
+https://hackernoon.com/heres-how-i-built-a-private-blockchain-network-and-you-can-too-62ca7db556c0
+https://medium.com/@WWWillems/how-to-set-up-a-private-ethereum-testnet-blockchain-using-geth-and-homebrew-1106a27e8e1e
+https://medium.com/@sijonas/how-to-get-ethereum-on-rinkeby-test-network-using-macos-and-mist-in-minutes-8bbb58588ecf
