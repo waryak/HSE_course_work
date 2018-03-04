@@ -1,3 +1,8 @@
 https://hackernoon.com/heres-how-i-built-a-private-blockchain-network-and-you-can-too-62ca7db556c0
 https://medium.com/@WWWillems/how-to-set-up-a-private-ethereum-testnet-blockchain-using-geth-and-homebrew-1106a27e8e1e
 https://medium.com/@sijonas/how-to-get-ethereum-on-rinkeby-test-network-using-macos-and-mist-in-minutes-8bbb58588ecf
+https://medium.com/@tina26919742/beginners-guide-to-ethereum-5-manage-information-of-your-blockchain-what-is-inside-a-block-6fbed779f182
+https://medium.com/mercuryprotocol/how-to-create-your-own-private-ethereum-blockchain-dad6af82fc9f
+https://www.rinkeby.io/#geth
+https://gist.github.com/cryptogoth/10a98e8078cfd69f7ca892ddbdcf26bc
+https://github.com/ethereum/go-ethereum
