@@ -1,7 +1,7 @@
 First, we need to install RabbitMQ, which provides a broker for consuming and publishing messages.
 
 MacOS: 
-`brew install rabbitmq` - Download
+``brew install rabbitmq`` - Download
 `brew services start rabbitmq` - Run server
 Ubuntu:
  --
