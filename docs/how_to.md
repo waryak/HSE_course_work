@@ -20,12 +20,17 @@ Install **pika** and run publisher with consumer
 -
 
 Then, install all libs from `requirements.txt`:
+
 `pip install -r requirements.txt`
 
 Now we are ready to consume or publish!
+
 Consume:
+
 `python[3] recieve.py`
+
 Publish:
+
 `python[3] send.py <message>`
 
 
