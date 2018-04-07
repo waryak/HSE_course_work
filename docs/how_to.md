@@ -1,3 +1,6 @@
+Install & run Rabbit
+-
+
 First, we need to install RabbitMQ, which provides a broker for consuming and publishing messages.
 
 MacOS: 
