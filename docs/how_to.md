@@ -3,6 +3,7 @@ First, we need to install RabbitMQ, which provides a broker for consuming and pu
 MacOS: 
 ``brew install rabbitmq`` - Download
 `brew services start rabbitmq` - Run server
+
 Ubuntu:
  --
 
