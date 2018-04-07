@@ -13,9 +13,13 @@ Ubuntu:
 
 ``wget -O- https://dl.bintray.com/rabbitmq/Keys/rabbitmq-release-signing-key.asc |
      sudo apt-key add -``
+
 ``wget -O- https://www.rabbitmq.com/rabbitmq-release-signing-key.asc | sudo apt-key add -``
+
 ``sudo apt-get update``
+
 ``apt-get install rabbitmq-server``
+
 ``service rabbitmq-server start``
 
 
