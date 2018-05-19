@@ -1,6 +1,6 @@
 import pika
 
-class Cluster:
+class ClusterManager:
     def __init__(self, url: str, name: str, connection=True):
         """
         Used to initialize cluster with full AMQP URL.
@@ -117,3 +117,4 @@ class Cluster:
         print(' [x] {}: Message "{}" sent with routing key {}.'.format(
             self.NAME, body, routing_key))
         return resp
+
