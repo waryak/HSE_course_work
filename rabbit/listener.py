@@ -49,5 +49,5 @@ class ClusterListener:
         """
         Used to call start_consume method for channel.
         """
-        print(f' [x] {self.CLUSTER}:self.SERVER: Consuming started')
+        print(f' [x] {self.CLUSTER}:{self.SERVER}: Consuming started')
         return self.channel.start_consuming()
