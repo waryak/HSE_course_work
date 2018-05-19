@@ -25,8 +25,8 @@ class ClusterManager:
         resp = self.channel.exchange_declare(
                 exchange=self.NAME,
                 exchange_type='direct')
-        print(' [x] {}: Exchange "{}" created.'.format(self.NAME))
-        return self.connection, self.channel, resp
+        print(f' [x] {self.NAME}: Exchange "{self.NAME}" created.')
+        return resp
 
 
     def clean(self):
@@ -83,6 +83,8 @@ class ClusterManager:
                     queue=queue_name,
                     routing_key=label
                     )
+        else:
+            resp_binding_label = None
 
         print(' [x] {}: Server "{}" added and queue binded.'.format(
             self.NAME, name))
@@ -106,11 +108,11 @@ class ClusterManager:
         return resp
 
 
-    def send_message(body, server='all', label=None):
+    def send_message(self, body, server='all', label=None):
         """
         Used to send messages to the servers.
         """
-        routing_key = label if label else server
+        routing_key = label if label else f'{self.NAME}:{server}'
         resp = self.channel.basic_publish(exchange=self.NAME,
                       routing_key=server,
                       body=body)
