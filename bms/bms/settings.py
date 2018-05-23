@@ -27,7 +27,9 @@ SECRET_KEY = 'lu(y(!$_52zh(%u^+sq9bg!uq5roicy*30dn=oc3))$l2z($*-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '*'
+]
 
 
 # Application definition
@@ -126,6 +128,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'static/'
 
 # CELERY
 CELERY_BROKER_URL = 'redis://bms-redis:6379'
