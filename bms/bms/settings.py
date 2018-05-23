@@ -82,10 +82,9 @@ WSGI_APPLICATION = 'bms.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'bms_db',
+        'NAME': 'postgres',
         'USER': 'postgres',
-        'PASSWORD': 'asdfg123',
-        'HOST': 'localhost',
+        'HOST': 'bms-db',
         'PORT': 5432,
     }
 }
@@ -129,8 +128,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # CELERY
-CELERY_BROKER_URL = 'redis://localhost:6379'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_BROKER_URL = 'redis://bms-redis:6379'
+CELERY_RESULT_BACKEND = 'redis://bms-redis:6379'
 
 CELERY_DEBUG = True
 
