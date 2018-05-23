@@ -1,0 +1,4 @@
+FROM nginx:latest
+COPY bms.conf /etc/nginx/conf.d/bms.conf
+RUN mkdir /static
+VOLUME /vhost.d

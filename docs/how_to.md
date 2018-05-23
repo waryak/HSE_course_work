@@ -9,5 +9,7 @@ How to localy run project
 `cd jeth && npm install`
 * Run django app:
 `python3 bms/manage.py runserver 8000`
+* Run celery:
+`celery -A bms worker -Q queue_name`
 * Run node app:
 `node jeth/main.js`
