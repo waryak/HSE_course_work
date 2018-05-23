@@ -2,6 +2,7 @@ How to localy run project
 -
 
 ##### Ubuntu:
+* Install postgres `https://www.digitalocean.com/community/tutorials/postgresql-ubuntu-16-04-ru`
 * Install redis: `https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-redis-on-ubuntu-16-04`
 * Install python requirements:
 `pip3 install -r bms/requirements.txt`
