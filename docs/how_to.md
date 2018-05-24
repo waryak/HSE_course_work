@@ -10,8 +10,10 @@ How to localy run project
 `apt install npm`
 * Install js requirements:
 `cd jeth && npm install`
+* Install migrations
+`python3 bms/manage.py migrate --setings=bms.settingsdebug`
 * Run django app:
-`python3 bms/manage.py runserver 8000`
+`python3 bms/manage.py runserver 8000 --setings=bms.settingsdebug`
 * Run node app:
 `node jeth/main.js`
 

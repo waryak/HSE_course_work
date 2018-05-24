@@ -9,7 +9,9 @@ RUN apt update
 RUN apt install celeryd -y
 
 RUN mkdir /bms
+RUN mkdir /bms/data
 ADD . /bms
 WORKDIR /bms
+
 
 EXPOSE 8000
