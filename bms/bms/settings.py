@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'lu(y(!$_52zh(%u^+sq9bg!uq5roicy*30dn=oc3))$l2z($*-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '*'
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_celery_beat',
     'django_celery_results',
+    'django_extensions',
     'blockchain',
 ]
 
@@ -134,7 +135,7 @@ STATIC_ROOT = 'static/'
 CELERY_BROKER_URL = 'redis://bms-redis:6379'
 CELERY_RESULT_BACKEND = 'redis://bms-redis:6379'
 
-CELERY_DEBUG = True
+CELERY_DEBUG = False
 
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
@@ -147,3 +148,12 @@ CELERY_TASK_DEFAULT_ROUTING_KEY = 'default'
 CELERY_TASK_QUEUES = (
     Queue('default', Exchange('default'), routing_key='default'),
 )
+
+NOTEBOOK_ARGUMENTS = [
+     "--NotebookApp.password='sha1:8b178da27072:5559100359db787a28842fcf32e1a05398c1cb5a'",
+     '--ip', '0.0.0.0',
+     '--port', '8888',
+     '--allow-root',
+     '--no-browser'
+]
+
