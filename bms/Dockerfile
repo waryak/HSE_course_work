@@ -1,8 +1,6 @@
-FROM ethereum/client-go as go_eth
-
 FROM python:3.6
 
-COPY --from=go_eth /usr/local/bin/ /usr/local/bin/
+ADD jeth/geth /usr/local/bin/
 
 ENV PYTHONBUFFERED 1
 
