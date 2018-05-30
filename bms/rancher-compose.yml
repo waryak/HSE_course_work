@@ -1,0 +1,23 @@
+version: '2'
+services:
+  bms-nginx:
+    scale: 1
+    start_on_create: true
+  bms-node:
+    scale: 1
+    start_on_create: true
+  bms-flower:
+    scale: 1
+    start_on_create: true
+  bms-redis:
+    scale: 1
+    start_on_create: true
+  bms-jupyter:
+    scale: 1
+    start_on_create: true
+  bms-db:
+    scale: 1
+    start_on_create: true
+  bms-backend:
+    scale: 1
+    start_on_create: true

@@ -1,0 +1,75 @@
+version: '2'
+services:
+  bms-nginx:
+    image: registry.gitlab.com/wnm.development/my-awesome-project/nginx
+    stdin_open: true
+    tty: true
+    ports:
+    - 80:8081/tcp
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: role=nginx
+  bms-node:
+    image: registry.gitlab.com/wnm.development/my-awesome-project/bms:development
+    stdin_open: true
+    volumes:
+    - /data/:/bms/data/
+    tty: true
+    command:
+    - bash
+    - start-node.sh
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: role=node
+  bms-flower:
+    image: registry.gitlab.com/wnm.development/my-awesome-project:development
+    stdin_open: true
+    tty: true
+    ports:
+    - 5555:5555/tcp
+    command:
+    - bash
+    - start-flower.sh
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: role=utils
+  bms-redis:
+    image: redis
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: role=redis
+  bms-jupyter:
+    image: registry.gitlab.com/wnm.development/my-awesome-project:development
+    stdin_open: true
+    tty: true
+    ports:
+    - 8888:8888/tcp
+    command:
+    - bash
+    - start-jupyter.sh
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: role=utils
+  bms-db:
+    image: postgres:latest
+    stdin_open: true
+    volumes:
+    - /postgres/:/var/lib/postgresql/data
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: role=db
+  bms-backend:
+    image: registry.gitlab.com/wnm.development/my-awesome-project/bms:development
+    stdin_open: true
+    volumes:
+    - /data/:/bms/data/
+    tty: true
+    command:
+    - bash
+    - start-backend.sh
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: role=backend
