@@ -40,7 +40,7 @@ class Blockchain(models.Model):
     )
 
     process_pid = models.IntegerField(
-        default=0,
+        blank=True, null=True,
         verbose_name='pid процесса geth'
     )
 
