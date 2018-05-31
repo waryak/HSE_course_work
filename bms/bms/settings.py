@@ -157,3 +157,4 @@ NOTEBOOK_ARGUMENTS = [
      '--no-browser'
 ]
 
+GETH = '/bms/geth'

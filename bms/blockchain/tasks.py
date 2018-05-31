@@ -5,9 +5,21 @@ from bms.celery import app
 
 @app.task(name='run_command')
 def run_command(command):
-    # TODO
     print(command)
-    return 'success'
+
+
+@app.task(name='init')
+def init(node_id):
+    from blockchain.models.node import Node
+    node = Node.objects.get(id=node_id)
+    node.init()
+
+
+@app.task(name='connect')
+def connect(node_id):
+    from blockchain.models.node import Node
+    node = Node.objects.get(id=node_id)
+    node.connect()
 
 
 @app.task(name='execute_code')

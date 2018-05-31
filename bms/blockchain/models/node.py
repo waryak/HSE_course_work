@@ -1,3 +1,8 @@
+import signal
+from subprocess import Popen
+
+import os
+from django.conf import settings
 from django.db import models
 from django.utils.crypto import get_random_string
 
@@ -19,6 +24,11 @@ class Node(models.Model):
         Blockchain,
         on_delete=models.CASCADE,
         verbose_name='блокчейн'
+    )
+
+    process_pid = models.IntegerField(
+        default=0,
+        verbose_name='pid процесса geth'
     )
 
     class Meta:
@@ -46,3 +56,23 @@ class Node(models.Model):
             (code,),
             queue=self.queue_name,
         )
+
+    def init(self):
+        self.blockchain.init()
+
+    def connect(self):
+        # geth --networkid 5128794 --port 30259 --datadir ./chain-data --bootnodes enode://2fd46b0fce2cde2d0d2b77d6e5a0912e6caba6b461ce8089f34d1a5adbe83b10a3ff547cdf2363970d5c56788cc1c58c17234788adef127446a59e35f5c70371@5.23.52.206:30259
+        process = Popen([settings.GETH,
+                         '--networkid', self.blockchain.network_id,
+                         '--port', self.blockchain.port,
+                         '--datadir', self.blockchain.data_dir(),
+                         '--bootnodes', self.blockchain.enode])
+        self.process_pid = process.pid
+        self.save()
+        return process
+
+    def stop(self):
+        if self.process_pid:
+            os.kill(self.process_pid, signal.SIGTERM)
+            self.process_pid = 0
+            self.save()
