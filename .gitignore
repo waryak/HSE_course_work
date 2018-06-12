@@ -116,3 +116,6 @@ package-lock.json
 
 # static
 static/
+
+# data
+data/

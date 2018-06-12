@@ -132,8 +132,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = 'static/'
 
 # CELERY
-CELERY_BROKER_URL = 'redis://bms-redis:6379'
-CELERY_RESULT_BACKEND = 'redis://bms-redis:6379'
+CELERY_BROKER_URL = 'redis://bms-db:6379'
+CELERY_RESULT_BACKEND = 'redis://bms-db:6379'
 
 CELERY_DEBUG = False
 
